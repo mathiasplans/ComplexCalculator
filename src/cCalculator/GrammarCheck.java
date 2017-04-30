@@ -49,25 +49,26 @@ class GrammarCheck {
      * @return checkProhibited(str)
      */
     private boolean checkFunctions(String str){
-        String temp = str.replaceAll("[^a-zA-Z]", " "); // Vahetab koik mitte-tahed tuhikutega ning seejarel splitib stringi arrayks
-		int shift = 0;
-		for(char c : temp.toCharArray()){
-			if(c == ' ') shift++;
-			else break;
-		}	
-		temp = temp.substring(shift);
-        String[] listOfFun = temp.split(" +");
-        for(String s : listOfFun){ // Kui arrays on tundmatu string, siis tagastab false
-            if(!(Functions.contains(s) || Constants.contains(s))) return false;
-        }
+			String temp = str.replaceAll("[^a-zA-Z]", " "); // Vahetab koik mitte-tahed tuhikutega ning seejarel splitib stringi arrayks
+			int shift = 0;
+			for(char c : temp.toCharArray()){
+				if(c == ' ') shift++;
+				else break;
+			}
+			temp = temp.substring(shift);
+			if(temp.length() == 0) return checkProhibited(str);
+      String[] listOfFun = temp.split(" +");
+      for(String s : listOfFun){ // Kui arrays on tundmatu string, siis tagastab false
+          if(!(Functions.contains(s) || Constants.contains(s))) return false;
+      }
 
-        for(String s : Functions){ // Kui funktsioon on naiteks 'sin' voi 'sin2' voi 'sin()', siis tagastab false
-            if(str.matches(".*(" + s + ")$|" +
-            		".*(" + s + ")[^(].*|" +
-                    ".*(" + s + ").[)].*")) return false;
-        }
+      for(String s : Functions){ // Kui funktsioon on naiteks 'sin' voi 'sin2' voi 'sin()', siis tagastab false
+          if(str.matches(".*(" + s + ")$|" +
+          		".*(" + s + ")[^(].*|" +
+                  ".*(" + s + ").[)].*")) return false;
+      }
 
-        return checkProhibited(str);
+      return checkProhibited(str);
     }
 
     /**
