@@ -1,6 +1,6 @@
 all: run
 
-.PHONY: run clean
+.PHONY: compile clean
 
 SRC = src/cCalculator/cCalculator.java src/cCalculator/GrammarCheck.java src/cCalculator/CalculatorFrame.java
 CLASSPATH = lib/jep-java-3.4-trial.jar
