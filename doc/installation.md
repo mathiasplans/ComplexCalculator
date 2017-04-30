@@ -1,4 +1,4 @@
-Complex Calculator
+### Complex Calculator
 
 Projekti ehitamiseks on vaja olle Linux süsteemil ning Makefile tarkvara installitud.
 

@@ -1,4 +1,4 @@
-Complex Calculator
+### Complex Calculator
 Version 1.0
 Mathias Plans
 Github repository: https://github.com/mathiasplans/ComplextCalculator
