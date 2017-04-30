@@ -3,7 +3,7 @@ Version 1.0
 Mathias Plans  
 Github repository: https://github.com/mathiasplans/ComplextCalculator  
 
-Tegu on kalkulaatoriga, mis töötab ka kompleksete arvudega. kalkulaatoris saab kirjutada klahvidega või klaviatuuriga.
+Tegu on kalkulaatoriga, mis töötab ka kompleksete arvudega. Kalkulaatoris saab kirjutada klahvidega või klaviatuuriga.
 Kui tekstiväljas on valiidne ekspressioon, siis vastuse lahtrisse genereeritakse vastus.
 
 Operatsioonid:
