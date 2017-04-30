@@ -1,6 +1,6 @@
 package cCalculator;
 
-import java.util.Scanner;
+import com.singularsys.jep.*;
 
 /**
  * @author Mathias
@@ -9,28 +9,16 @@ import java.util.Scanner;
 public class cCalculator{
 
 	/**
+	 * Main meetod
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		new cCalculator(600, 400);
-		Scanner sc = new Scanner(System.in);
-		String s = sc.nextLine();
-		Formater f = new Formater(s);
-		System.out.println(s);
-		String str = f.getFormated();
-		System.out.println(str);
-		sc.close();
-		
-		System.out.println(f.getFormated2(str, f.bracketize()));
-		
-		CalculatorTree tree = new CalculatorTree(str);
-		tree.determineElements();
-		
-		
+		Jep parser = new Jep();	// Jep objekt
+		GrammarCheck gc = new GrammarCheck(); // GrammarCheck objekt
+		// Jep-i seadistamine
+		parser.setImplicitMul(true);
+		parser.setAllowUndeclared(true);
+		// Kalkulaatori initialiseerimine
+		new CalculatorFrame(600, 400, parser, gc);
 	}
-	
-	public cCalculator(int x, int y){
-		new CalculatorFrame(x, y, this);
-	}
-
 }
